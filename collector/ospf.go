@@ -342,7 +342,7 @@ type vrfNeighbors struct {
 }
 
 type ospfNeighbor struct {
-	State         string `json:"state"`
+	State         string `json:"converged"`
 	IfaceName     string `json:"ifaceName"`
 	LocalAddress  string `json:"localAddress"`
 	RemoteAddress string `json:"address"`
@@ -350,7 +350,7 @@ type ospfNeighbor struct {
 
 func (n *ospfNeighbor) UnmarshalJSON(data []byte) error {
 	var temp struct {
-		State      string `json:"state"`
+		State      string `json:"converged"`
 		IfaceName  string `json:"ifaceName"`
 		LocalAddr  string `json:"localAddress"`
 		RemoteAddr string `json:"address"`
